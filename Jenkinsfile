@@ -32,7 +32,7 @@ stage('Build Docker Image'){
 stage('Run Container on Server'){
 try{
     sh "docker rm -f WeatherConsumer || true "
-    sh "docker run --env-file /prop.env -p 8081:8080 -d --name WeatherConsumer ${DOCKERHUB_REPO}:${DOCKER_IMAGE_VERSION}"
+    sh "docker run --env-file /prop.env -p 8080:8080 -d --name WeatherConsumer ${DOCKERHUB_REPO}:${DOCKER_IMAGE_VERSION}"
 }
 catch(e){
     
